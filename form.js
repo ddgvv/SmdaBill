@@ -27,9 +27,32 @@ function myCalculate() {
   var lblValue = document.getElementById("riw");
   lblValue.value= inWords(x);
 }
+function myExtraSubmit() {
+
+  var billno = document.getElementById("billno").value;
+  var date = document.getElementById("date").value;
+  var name = document.getElementById("name").value;
+  var address = document.getElementById("address").value;
+  var duty = document.getElementById("duty").value;
+  var amt = document.getElementById("amt").value;
+  var fduty = document.getElementById("fduty").value;
+  var famt = document.getElementById("famt").value;
+  var riw = document.getElementById("riw").value;
+    
+  document.getElementById('sbillno').innerHTML = billno;
+  document.getElementById('sdate').innerHTML = date;
+  document.getElementById('sname').innerHTML = name;
+  document.getElementById('saddress').innerHTML = address+', Puducherry-605009';
+  document.getElementById('sduty').innerHTML = duty;
+  document.getElementById('samt').innerHTML = amt;
+  document.getElementById('sfduty').innerHTML = fduty;
+  document.getElementById('sfamt').innerHTML = famt;
+  document.getElementById('sgamt').innerHTML = amt;
+  document.getElementById('sriw').innerHTML = riw;
+}
 
 
-function myFunction() {
+function mySubmit() {
 
   var billno = document.getElementById("billno").value;
   var date = document.getElementById("date").value;
