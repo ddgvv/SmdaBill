@@ -36,6 +36,9 @@ p.indent
 
 <div>
   <form action="jvmTxt.php" method="post">
+	<label for="date">Date Range</label>
+    <input type="date" id="dateRange" name="dateRange" >
+
     <label for="billno">Bill Number </label>
     <input type="text" id="billno" name="billno" >
 
@@ -97,8 +100,8 @@ p.indent
 <tr>
     <td colspan="2" rowspan="2">1</br></br></br>2</br></br></br></td>
 	<td colspan="11" rowspan="2">
-	<p>Security Guard Duty  Oct-2020</p>
-	<p>(01-10-2020 to 31-10-2020) 12 Hours  duty</p>
+	<p>Security Guard Duty <span id="smonth"/></p>
+	<p>(<span id="sdateRange"/> </p>
 	</br>
 	Security Guard Fuction Duty
 	</br></br></br></br></br>

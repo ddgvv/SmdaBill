@@ -36,7 +36,10 @@ font-weight: bold;
 <body>
 <div>
   <form action="txt.php" method="post">
-    <label for="billno">Bill Number </label>
+    <label for="date">Date Range</label>
+    <input type="date" id="dateRange" name="dateRange" >
+
+	<label for="billno">Bill Number </label>
     <input type="text" id="billno" name="billno" >
 
     <label for="date">Date</label>
@@ -91,8 +94,8 @@ font-weight: bold;
 <tr>
     <td colspan="2" rowspan="2">1</br></br></br></br></br></br></td>
 	<td colspan="11" rowspan="2">
-	<p>Security Guard Duty Sep-2020</p>
-	<p>(01-09-2020 to 30-09-2020) 12 Hours duty</p>
+	<p>Security Guard Duty <span id="smonth"/></p>
+	<p>(<span id="sdateRange"/> </p>
 	</br></br></br></br></br></br>
 	</td>
 	<td colspan="2"><p id="sduty"/> Duty</br></br></br></br></br></br></td>

@@ -1,5 +1,6 @@
 var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
 var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function inWords (num) {
     if ((num = num.toString()).length > 9) return 'overflow';
@@ -28,46 +29,53 @@ function myCalculate() {
   lblValue.value= inWords(x);
 }
 function myExtraSubmit() {
+	var amt = parseInt(document.getElementById("amt").value);
+	var fduty = document.getElementById("fduty").value;
+	var famt = parseInt(document.getElementById("famt").value);
 
-  var billno = document.getElementById("billno").value;
-  var date = document.getElementById("date").value;
-  var name = document.getElementById("name").value;
-  var address = document.getElementById("address").value;
-  var duty = document.getElementById("duty").value;
-  var amt = parseInt(document.getElementById("amt").value);
-  var fduty = document.getElementById("fduty").value;
-  var famt = parseInt(document.getElementById("famt").value);
-  var riw = document.getElementById("riw").value;
-    
-  document.getElementById('sbillno').innerHTML = billno;
-  document.getElementById('sdate').innerHTML = date;
-  document.getElementById('sname').innerHTML = name;
-  document.getElementById('saddress').innerHTML = address+', Puducherry-605009';
-  document.getElementById('sduty').innerHTML = duty;
-  document.getElementById('samt').innerHTML = amt;
-  document.getElementById('sfduty').innerHTML = fduty;
-  document.getElementById('sfamt').innerHTML = famt;
-  document.getElementById('sgamt').innerHTML = amt + famt;
-  document.getElementById('sriw').innerHTML = riw;
+	setDefaultValues();
+
+	document.getElementById('sfduty').innerHTML = fduty;
+	document.getElementById('sfamt').innerHTML = famt;
+	document.getElementById('sgamt').innerHTML = amt + famt;
 }
 
-
 function mySubmit() {
+	setDefaultValues();
+  
+}
 
-  var billno = document.getElementById("billno").value;
-  var date = document.getElementById("date").value;
-  var name = document.getElementById("name").value;
-  var address = document.getElementById("address").value;
-  var duty = document.getElementById("duty").value;
-  var amt = document.getElementById("amt").value;
-  var riw = document.getElementById("riw").value;
-    
-  document.getElementById('sbillno').innerHTML = billno;
-  document.getElementById('sdate').innerHTML = date;
-  document.getElementById('sname').innerHTML = name;
-  document.getElementById('saddress').innerHTML = address+', Puducherry-605009';
-  document.getElementById('sduty').innerHTML = duty;
-  document.getElementById('samt').innerHTML = amt;
-  document.getElementById('sgamt').innerHTML = amt;
-  document.getElementById('sriw').innerHTML = riw;
+function setDefaultValues(){
+	var billno = document.getElementById("billno").value;
+	var date = document.getElementById("date").value;
+	var name = document.getElementById("name").value;
+	var address = document.getElementById("address").value;
+	var duty = document.getElementById("duty").value;
+	var amt = document.getElementById("amt").value;
+	var riw = document.getElementById("riw").value;
+
+	document.getElementById('sbillno').innerHTML = billno;
+	document.getElementById('sdate').innerHTML = date;
+	document.getElementById('sname').innerHTML = name;
+	document.getElementById('saddress').innerHTML = address+', Puducherry-605009';
+	document.getElementById('sduty').innerHTML = duty;
+	document.getElementById('samt').innerHTML = amt;
+	document.getElementById('sgamt').innerHTML = amt;
+	document.getElementById('sriw').innerHTML = riw;
+	
+	setDateRange();
+
+}
+
+function setDateRange(){
+	var dateRange = document.getElementById("dateRange").value;
+	var dateR = new Date(dateRange);
+	var y = dateR.getFullYear();
+	var m = dateR.getMonth();
+	var firstDay = new Date(y, m, 1);
+	var lastDay = new Date(y, m + 1, 0);
+	var firstDayString = firstDay.getDate()  + "-" + (firstDay.getMonth()+1) + "-" + firstDay.getFullYear();
+	var lastDayString = lastDay.getDate()  + "-" + (lastDay.getMonth()+1) + "-" + lastDay.getFullYear();
+	document.getElementById('smonth').innerHTML = monthNames[dateR.getMonth()] + '-' + firstDay.getFullYear(); 
+	document.getElementById('sdateRange').innerHTML = firstDayString + ' to ' + lastDayString + ') 12 Hours duty';
 }
