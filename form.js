@@ -79,3 +79,18 @@ function setDateRange(){
 	document.getElementById('smonth').innerHTML = monthNames[dateR.getMonth()] + '-' + firstDay.getFullYear(); 
 	document.getElementById('sdateRange').innerHTML = firstDayString + ' to ' + lastDayString + ') 12 Hours duty';
 }
+
+function Export() {
+	html2canvas(document.getElementById('tblCustomers'), {
+		onrendered: function (canvas) {
+			var data = canvas.toDataURL();
+			var docDefinition = {
+				content: [{
+					image: data,
+					width: 500
+				}]
+			};
+			pdfMake.createPdf(docDefinition).download("Table.pdf");
+		}
+	});
+}

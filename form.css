@@ -37,3 +37,30 @@ div {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+body
+{
+font-family: Arial;
+font-size: 10pt;
+}
+table
+{
+border: 1px solid #ccc;
+border-collapse: collapse;
+}
+table th
+{
+background-color: #F7F7F7;
+color: #333;
+font-weight: bold;
+}
+table th, table td
+{
+padding: 5px;
+border: 1px solid #ccc;
+}
+p.indent
+{ 
+padding-left: 2.5em ;
+font-weight: bold;
+}
