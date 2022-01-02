@@ -53,7 +53,8 @@ function setDefaultValues(){
 	var duty = document.getElementById("duty").value;
 	var amt = document.getElementById("amt").value;
 	var riw = document.getElementById("riw").value;
-
+	console.log('new' + riw);
+  
 	document.getElementById('sbillno').innerHTML = billno;
 	document.getElementById('sdate').innerHTML = date;
 	document.getElementById('sname').innerHTML = name;
@@ -69,6 +70,8 @@ function setDefaultValues(){
 
 function setDateRange(){
 	var dateRange = document.getElementById("dateRange").value;
+	var workType = document.getElementById("workType").value;
+
 	var dateR = new Date(dateRange);
 	var y = dateR.getFullYear();
 	var m = dateR.getMonth();
@@ -76,7 +79,9 @@ function setDateRange(){
 	var lastDay = new Date(y, m + 1, 0);
 	var firstDayString = firstDay.getDate()  + "-" + (firstDay.getMonth()+1) + "-" + firstDay.getFullYear();
 	var lastDayString = lastDay.getDate()  + "-" + (lastDay.getMonth()+1) + "-" + lastDay.getFullYear();
-	document.getElementById('smonth').innerHTML = monthNames[dateR.getMonth()] + '-' + firstDay.getFullYear(); 
+	console.log(dateR.getMonth());
+	console.log(firstDay.getFullYear());
+	document.getElementById('smonth').innerHTML = workType + ' Duty ' + monthNames[dateR.getMonth()] + '-' + firstDay.getFullYear(); 
 	document.getElementById('sdateRange').innerHTML = firstDayString + ' to ' + lastDayString + ') 12 Hours duty';
 }
 
