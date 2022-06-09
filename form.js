@@ -58,7 +58,7 @@ function setDefaultValues(){
 	document.getElementById('sbillno').innerHTML = billno;
 	document.getElementById('sdate').innerHTML = date;
 	document.getElementById('sname').innerHTML = name;
-	document.getElementById('saddress').innerHTML = address+', Puducherry-605009';
+	document.getElementById('saddress').innerHTML = address;
 	document.getElementById('sduty').innerHTML = duty;
 	document.getElementById('samt').innerHTML = amt;
 	document.getElementById('sgamt').innerHTML = amt;
